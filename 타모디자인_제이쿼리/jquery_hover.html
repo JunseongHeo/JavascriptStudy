@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+
+
+        $(document).ready(function(){
+            $(".btn").hover(function(){ // 호버
+                $(this).css({
+                    "background" : "deeppink",
+                    "transition" : "0.7s"
+                })
+            }, function(){
+                $(this).css({
+                    "background" : "skyblue",
+                    "transition" : "0.5s"
+                })
+            })
+
+
+            $(".cooking > img").click(function(){
+                $(this).attr("src", "./2.jpg");
+            })
+
+        });
+
+
+    </script>
+    <style>
+        .btn{
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            background: skyblue;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="btn">메뉴</div>
+    <div class="btn">메뉴</div>
+    <div class="btn">메뉴</div>
+    <div class="btn">메뉴</div>
+    <div class="btn">메뉴</div>
+    <div class="btn">메뉴</div>
+
+    <div class="cooking">
+        <img src="./1.jpg">
+    </div>
+</body>
+</html>

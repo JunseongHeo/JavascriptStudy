@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        // var num1 = 1;
+        // var char1 = "1";
+        // var myName = "준성";
+        // alert(num1+num1);
+        // alert(num1+char1);
+        // alert(myName);
+
+        // if(num1 == 1){
+        //     document.write("num1은 "+num1+" 입니다.");
+        // } else {
+        //     document.write("num1은 1이 아닙니다.")
+        // }
+
+        // for(var i=1; i<=5; i++) {
+        //     document.write(i+"<br>");
+        // }
+
+
+        $(document).ready(function(){
+            $(".btn").click(function(){ // 클릭 이벤트
+                $(".popup_bg").css({ "display" : "block" });
+            })
+
+            $(".popup_bg").click(function(){
+                $(this).css({ "display" : "none" });
+            }) 
+        });
+
+
+    </script>
+    <style>
+        .btn{
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            background: skyblue;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .popup_bg{
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+        }
+        .popup{
+            position: absolute;
+            left: calc(50% - 150px);
+            top: calc(50% - 250px);
+            width: 300px;
+            height: 500px;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn">준성</div>
+    <div class="popup_bg">
+        <div class="popup"></div>
+    </div>
+</body>
+</html>
