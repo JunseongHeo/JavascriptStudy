@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    
+
+    <div class="alert-box" id="alert">
+        <p id="alert_box">Alert 박스</p> 
+        <button onclick=" 알림창열기('none'); 알림창내용('아이디입력이 필요합니다.') ">닫기</button>
+    </div>
+
+    <button onclick=" 알림창열기('block') ">버튼</button>
+
+
+    <script>
+        function 알림창열기(param) {
+            document.getElementById('alert').style.display=param;
+        } // 긴 코드를 짧게 축약
+        function 알림창내용(param) {
+            document.getElementById('alert_box').innerHTML=param;
+        } // 긴 코드를 짧게 축약
+
+        // 알림창열기('block');
+        // 알림창열기('none'); // 파라미터값을 받아서 기존의 함수1개를 가변적으로 활용. 함수 2개가 필요했던 것을 1개로 줄일 수 있음
+        
+    </script>
+
+
+</body>
+</html>
