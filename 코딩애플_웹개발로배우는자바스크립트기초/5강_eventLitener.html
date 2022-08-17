@@ -12,7 +12,7 @@
 
     <div class="alert-box" id="alert">
         <p id="alert_box">Alert 박스</p> 
-        <button onclick=" 알림창닫기() ">X</button>
+        <button id="close">X</button> 
     </div>
 
 
@@ -30,6 +30,12 @@
         // 알림창열기('block');
         // 알림창열기('none'); // 파라미터값을 받아서 기존의 함수1개를 가변적으로 활용. 함수 2개가 필요했던 것을 1개로 줄일 수 있음
         
+
+        document.getElementById('close').addEventListener('click', function(){ // 여기서 click은 이벤트
+            document.getElementById('alert').style.display = 'none';
+        }) // 이벤트리스너. onclick 안써도 선택자 클릭시 이벤트 실행가능
+
+        // 이벤트는 click, keydown, scroll, mouseover 등이 있음
     </script>
 
 
