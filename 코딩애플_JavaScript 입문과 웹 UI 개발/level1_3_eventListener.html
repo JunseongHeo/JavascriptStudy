@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="alert-box" id="alert" style="margin: 5px;">
+        <p id="title">알림창임</p>
+        <button class="close">X</button>
+    </div>
+    <div class="alert-box" id="alert2" style="margin: 5px; background-color: pink;">
+        <p id="title2">알림창임</p>
+        <button onclick="display('alert2','none')">X</button>
+    </div>
+    <button onclick="display('alert','block'), text('title','아이디를 입력해주세요')">버튼</button>
+    <button onclick="display('alert2','block'), text('title2','비밀번호를 입력해주세요')">버튼</button>
+
+    <script>
+        function display(id, status) {
+            document.getElementById(id).style.display = status;
+        }
+        function text(id, content) {
+            document.getElementById(id).innerText = content;
+        }
+
+        document.getElementsByClassName('close')[0].addEventListener('click', function() {  // 콜백함수. 파라미터자리에 들어가는 함수
+            document.getElementsByClassName('alert-box')[0].style.display = 'none';
+        });
+    </script>
+</body>
+</html>
+
+<!-- 클릭 / 키입력 / 스크롤 / 드래그 등등
+유저들이 조각을 가하는 것을 모두 이벤트라고 함. -->
