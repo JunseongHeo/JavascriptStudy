@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        $(function(){
+            $('textarea.content').keyup(function(){
+                bytesHandler(this);
+            });
+        });
+        
+        function getTextLength(str) {
+            var len = 0;
+            
+            for (var i = 0; i < str.length; i++) {
+                if (escape(str.charAt(i)).length == 6) {
+                    len++;
+                }
+                len++;
+            }
+
+            return len;
+        }
+        
+        function bytesHandler(obj){
+            var text = $(obj).val();
+            $('p.bytes').text(getTextLength(text));
+        }
+        
+    </script>
+
+    <ul class="handler-ul">
+
+        <li><p class="bytes">0</p></li>
+        
+        <li><textarea class="content"></textarea></li>
+        
+    </ul>
+    
+    
+    
+
+
+
+</body>
+
+</html>
